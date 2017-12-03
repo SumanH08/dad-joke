@@ -1,7 +1,56 @@
-p{
+html{
+  min-height: 100%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+margin: 0;
+padding: 0;
+}
+
+.heading p{
   font-size: 48px;
   font-family: 'Boogaloo', cursive;
 }
-#heading{
-  padding-left: 10em;
+
+/*.heading{
+  padding-top: 5em;
+}*/
+
+#phone{
+  text-align: center;
+  padding-top: 10em;
+}
+
+#instruct{
+  font-size: 48px;
+  font-family: 'Boogaloo', cursive;
+}
+
+#dad div{
+  padding: 0;
+  margin: 0;
+}
+#dad{
+  padding: 0;
+  margin: 0;
+}
+.joke-text{
+  padding: 50px 0 100px 0;
+  font-family: Slackey, cursive !important;
+  color: #004D40;
+}
+
+footer{
+  background: grey;
+  font-family: Times;
+  font-size: 48px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  margin: 0;
 }
