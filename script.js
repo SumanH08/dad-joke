@@ -3,33 +3,31 @@ function onload() {
 }
 //listen to shake event
 // function shakes() {
-  var shakeEvent = new Shake({threshold: 15});
-  shakeEvent.start();
-  window.addEventListener('shake', function() {
-    // $("#result").html(`<p><img width="24" src="img/loading.svg"/>Loading...</p>`)
+var shakeEvent = new Shake({
+  threshold: 15
+});
+shakeEvent.start();
+window.addEventListener('shake', function() {
+  $.ajax({
+    url: "https://icanhazdadjoke.com/",
+    dataType: 'json'
+  }).done(function(res) {
+    renderResults(res);
+  }).fail(function(jq, status, err) {
+    showError(jq.status);
+  })
 
-    // var city = document.getElementById('result').value;
-
-    $.ajax({
-      url: "https://icanhazdadjoke.com/",
-      dataType: 'json'
-    }).done(function(res) {
-      renderResults(res);
-    }).fail(function(jq, status, err) {
-      showError(jq.status);
-    })
-
-  }, false);
+}, false);
 // }
 
 function renderResults(res) {
-  // $("p.heading").css("display", "none");
-  // $("#result").text(res.joke);
-  $(".heading").html(`<div class="heading row">
+  var colors = ['#5D4037', '#BF360C', '#1B5E20', '#01579B', '#283593', '#4A148C', '#880E4F', '#004D40'];
+  var random_color = colors[Math.floor(Math.random() * colors.length)];
+  $(".heading").html(`
       <div class="col-xs-12">
         <p class="joke-text">${res.joke}</p>
-      </div>
-    </div>`);
+      </div>`);
+  $('.joke-text').css('color', random_color);
   $("#phone").html("");
   $("#instruct").html(`<p>Do you like it?<br> Keep it shakin'</p>`)
 }
@@ -39,8 +37,8 @@ function showError(status) {
 }
 
 // stop listening
-function stopShake(){
-    shakeEvent.stop();
+function stopShake() {
+  shakeEvent.stop();
 }
 
 //check if shake is supported or not.
