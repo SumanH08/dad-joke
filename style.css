@@ -4,28 +4,20 @@ html{
   padding: 0;
   margin: 0;
 }
-
-body{
-margin: 0;
-padding: 0;
+.container{
+  max-width: 1000px;
 }
-
 .heading p{
-  font-size: 48px;
+  font-size: 2em;
   font-family: 'Boogaloo', cursive;
 }
 
-/*.heading{
-  padding-top: 5em;
-}*/
-
 #phone{
   text-align: center;
-  padding-top: 10em;
 }
 
 #instruct{
-  font-size: 48px;
+  font-size: 24px;
   font-family: 'Boogaloo', cursive;
 }
 
@@ -37,20 +29,20 @@ padding: 0;
   padding: 0;
   margin: 0;
 }
+
 .joke-text{
-  padding: 50px 0 100px 0;
+  padding: 0.5em;
   font-family: Slackey, cursive !important;
-  color: #004D40;
 }
 
 footer{
-  background: grey;
-  font-family: Times;
-  font-size: 48px;
+  font-family: arial;
+  font-size: 12px;
   text-align: center;
-  position: absolute;
+  position: static;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  clear: both;
   margin: 0;
+  color: #9E9E9E;
 }

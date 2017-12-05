@@ -4,12 +4,12 @@
 <head>
 
   <meta charset="utf-16">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>dad jokes</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Boogaloo"
-   rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Slackey" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Slackey" rel="stylesheet">
   <!-- <script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
   <script src="script.js"></script> -->
   <script type="text/javascript" src="node_modules/shake.js/shake.js"></script>
@@ -21,20 +21,20 @@
 <body onload="onload();">
   <div class="container">
     <div class="heading row">
-      <div class="col-xs-6">
-        <p>Shake your phone,<br> I'll tell you a joke<br>A DAD joke!</p>
+      <div class="col-md-12">
+        <p>Shake your phone, I'll tell you a joke, A DAD joke!</p>
       </div>
-      <div class="col-xs-6"></div>
+      <!-- <div class="col-xs-6"></div> -->
     </div>
     <!-- <button onclick="shakes()">Click here</button> -->
     <div class="row" id="dad">
-      <div class="col-xs-6" id="instruct"></div>
-      <div class="col-xs-6">
-        <div><img style="width:300px; height:300px;" src="img/dadpic.png" /></div>
+      <div class="col-xs-5" id="instruct"><img class="center-block" style="max-width:120px; max-height:120px;" src="img/curve.png" /></div>
+      <div class="col-xs-7">
+        <div><img style="max-width:200px; max-height:200px;" src="img/dad-front.png" /></div>
       </div>
 
       <div class="row">
-        <div id="phone"><img style="width:400px; height:400px;" src="img/shakePhone.png" /></div>
+        <div id="phone"><img style="max-width:180px; max-height:180px;" src="img/shake_shake.png" /></div>
       </div>
 
     </div>
