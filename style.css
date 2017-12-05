@@ -4,9 +4,11 @@ html{
   padding: 0;
   margin: 0;
 }
+
 .container{
   max-width: 1000px;
 }
+
 .heading p{
   font-size: 2em;
   font-family: 'Boogaloo', cursive;
@@ -19,11 +21,26 @@ html{
 #instruct{
   font-size: 24px;
   font-family: 'Boogaloo', cursive;
+  text-align: left;
 }
 
 .joke-text{
+  font-size: 24px;
   padding: 0.5em;
   font-family: Slackey, cursive !important;
+}
+
+#joke-button{
+  text-align: center;
+  padding-top: 2em;
+}
+
+#joke-button button{
+  color: white;
+  background-color: #1E88E5;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
 }
 
 footer{

@@ -21,15 +21,24 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-md-12">
-        <div class="heading">
-          <p>Shake your phone, I'll tell you a joke, A DAD joke!</p>
+      <div class="col-xs-12">
+        <div id="joke">
+
         </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-xs-5" id="instruct">
+      <div class="col-md-3"></div>
+      <div class="col-xs-12 col-sm-12 col-md-5">
+        <div id="instruct">
+          <p>Shake your phone,<br> I'll tell you a joke, a DAD joke!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-5">
         <img style="max-width:120px; max-height:120px; float: right;" src="img/curve.png" />
       </div>
       <div class="col-xs-7">
@@ -37,12 +46,14 @@
       </div>
     </div>
 
-    <button id="joke-button" onclick="getJoke()">Click here</button>
+    <div id="joke-button">
+      <p>Works best on a mobile device.<br>To read a joke anyway,</p>
+      <button onclick="fetchJoke()">Click here</button>
+    </div>
 
     <div class="row">
       <div class="col-xs-12">
         <div id="phone">
-          <img style="max-width:180px; max-height:180px;" src="img/shake_shake.png" />
         </div>
       </div>
     </div>

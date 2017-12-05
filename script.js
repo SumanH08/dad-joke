@@ -1,89 +1,41 @@
-//listen to shake event
-// function shakes() {
-var shakeEvent = new Shake({
-  threshold: 15
-});
+var colors = ['#E53935', '#AD1457', '#7B1FA2', '#3F51B5', '#00838F', '#43A047', '#FF6D00'];
+
+function fetchJoke() {
+  $.ajax({
+    url: "https://icanhazdadjoke.com/",
+    dataType: 'json'
+  }).done(function(res) {
+    renderResults(res);
+  }).fail(function(jq, status, err) {
+    alert("Something went wrong!", status);
+  })
+}
 
 var shakedCalled = false;
 
-var gyroPresent = false;
 window.addEventListener("devicemotion", function(event) {
-  console.log("Function executed");
   if (event.rotationRate.alpha || event.rotationRate.beta || event.rotationRate.gamma) {
-
-    gyroPresent = true;
-    console.log("Disabling button now");
-    document.getElementById('joke-button').disabled = true;
-    document.getElementById('joke-button').style.display = "none";
-    window.removeEventListener("devicemotion", function(){
-      alert("De registered");
-    }, true);
-
     if(!shakedCalled) {
+      $('#joke-button').css('display', 'none');
+      $('#phone').html(`<img style="max-width:180px; max-height:180px;" src="img/shake_shake.png" />`);
       getJokeOnShake();
     }
-
   }
-}, true);
+});
 
-
-console.log("gyro status", gyroPresent);
 function getJokeOnShake(){
   shakedCalled = true;
+  var shakeEvent = new Shake({ threshold: 10 });
   shakeEvent.start();
-  alert("Inside getJokeonshake func");
-  window.addEventListener('shake', function() {
-    alert("Sending request");
-    $.ajax({
-      url: "https://icanhazdadjoke.com/",
-      dataType: 'json'
-    }).done(function(res) {
-      renderResults(res);
-    }).fail(function(jq, status, err) {
-      showError(jq.status);
-    })
-
-  }, false);
-}
-
-
-function getJoke() {
-  var click_button = document.getElementById('joke-button');
-  click_button.addEventListener('click', function() {
-    $.ajax({
-      url: "https://icanhazdadjoke.com/",
-      dataType: 'json'
-    }).done(function(res) {
-      renderResults(res);
-    }).fail(function(jq, status, err) {
-      showError(jq.status);
-    })
-  }, false);
-
+  window.addEventListener('shake', function() { fetchJoke() }, false);
 }
 
 function renderResults(res) {
-  var colors = ['#5D4037', '#BF360C', '#1B5E20', '#01579B', '#283593', '#4A148C', '#880E4F', '#004D40'];
   var random_color = colors[Math.floor(Math.random() * colors.length)];
-  $(".heading").html(`
-      <div class="col-xs-12">
-        <p class="joke-text">${res.joke}</p>
-      </div>`);
+  $("#joke").html(`<p class="joke-text">${res.joke}</p>`);
   $('.joke-text').css('color', random_color);
+
   $("#phone").html("");
+
   $("#instruct").html(`<p>Do you like it?<br> Keep it shakin'</p>`)
-}
-
-function showError(status) {
-  alert("Error")
-}
-
-// stop listening
-function stopShake() {
-  shakeEvent.stop();
-}
-
-//check if shake is supported or not.
-if (!("ondevicemotion" in window)) {
-  alert("Not Supported");
 }
