@@ -1,6 +1,3 @@
-function onload() {
-  console.log("Oh hi!");
-}
 //listen to shake event
 // function shakes() {
 var shakeEvent = new Shake({

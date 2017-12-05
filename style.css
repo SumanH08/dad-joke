@@ -21,15 +21,6 @@ html{
   font-family: 'Boogaloo', cursive;
 }
 
-#dad div{
-  padding: 0;
-  margin: 0;
-}
-#dad{
-  padding: 0;
-  margin: 0;
-}
-
 .joke-text{
   padding: 0.5em;
   font-family: Slackey, cursive !important;
@@ -45,4 +36,8 @@ footer{
   clear: both;
   margin: 0;
   color: #9E9E9E;
+}
+
+footer p {
+  line-height: 1em;
 }

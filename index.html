@@ -2,49 +2,56 @@
 <html>
 
 <head>
-
   <meta charset="utf-16">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>dad jokes</title>
+  <title>Dad Jokes on Shake</title>
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Slackey" rel="stylesheet">
-  <!-- <script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
-  <script src="script.js"></script> -->
-  <script type="text/javascript" src="node_modules/shake.js/shake.js"></script>
+  <link rel="stylesheet" href="style.css" />
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
   </script>
+  <script type="text/javascript" src="node_modules/shake.js/shake.js"></script>
   <script src="script.js"></script>
 </head>
 
-<body onload="onload()">
+<body>
   <div class="container">
-    <div class="heading row">
+
+    <div class="row">
       <div class="col-md-12">
-        <p>Shake your phone, I'll tell you a joke, A DAD joke!</p>
+        <div class="heading">
+          <p>Shake your phone, I'll tell you a joke, A DAD joke!</p>
+        </div>
       </div>
-      <!-- <div class="col-xs-6"></div> -->
     </div>
-    <button id="joke-button" onclick="getJoke()">Click here</button>
-    <div class="row" id="dad">
-      <div class="col-xs-5" id="instruct"><img style="max-width:120px; max-height:120px; float: right;" src="img/curve.png" /></div>
+
+    <div class="row">
+      <div class="col-xs-5" id="instruct">
+        <img style="max-width:120px; max-height:120px; float: right;" src="img/curve.png" />
+      </div>
       <div class="col-xs-7">
-        <div><img style="max-width:200px; max-height:200px;" src="img/dad-front.png" /></div>
+        <img style="max-width:200px; max-height:200px;" src="img/dad-front.png" />
       </div>
-
-      <div class="row">
-        <div id="phone"><img style="max-width:180px; max-height:180px;" src="img/shake_shake.png" /></div>
-      </div>
-
     </div>
+
+    <button id="joke-button" onclick="getJoke()">Click here</button>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="phone">
+          <img style="max-width:180px; max-height:180px;" src="img/shake_shake.png" />
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <div>
-    <footer>
-      <p style="line-height: 1em;">Powered by icanhazdadjoke.com</p>
-    </footer>
-  </div>
+  <footer>
+    <p>Powered by icanhazdadjoke.com</p>
+  </footer>
 </body>
 
 </html>
