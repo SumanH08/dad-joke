@@ -39,7 +39,7 @@ footer{
   font-family: arial;
   font-size: 12px;
   text-align: center;
-  position: static;
+  position: fixed;
   bottom: 0;
   width: 100%;
   clear: both;
